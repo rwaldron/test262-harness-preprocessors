@@ -99,7 +99,7 @@ Usage: `--preprocessor="preprocessors/babel"`
 
 Transpiles test contents with babel, using the following config: 
 
-```
+```js
 {
   plugins: [
     "@babel/plugin-proposal-class-properties",
@@ -115,7 +115,7 @@ Usage: `--preprocessor="preprocessors/babel-with-preset-env-spec-true"`
 
 Transpiles test contents with babel, using the following config: 
 
-```
+```js
 {
   presets: [[presets*, { spec: true }]],
   plugins: [
