@@ -1,0 +1,19 @@
+{
+  "name": "test262-harness-preprocessors",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "upgrade:babel": "npm install @babel/core@latest @babel/preset-env@latest @babel/plugin-proposal-class-properties@latest @babel/plugin-proposal-private-methods@latest @babel/plugin-proposal-numeric-separator@latest --save"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.6.3",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-numeric-separator": "^7.2.0",
+    "@babel/plugin-proposal-private-methods": "^7.6.0",
+    "@babel/preset-env": "^7.6.3"
+  }
+}
