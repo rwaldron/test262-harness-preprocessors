@@ -51,7 +51,7 @@ Ran 2 tests
 0 failed
 ```
 
-Now let's see that same test, but without a preprocessor and using an engine that has not yet implemented _Numeric Separator Literal_: 
+Now let's see that same test, but **without a preprocessor** and using an engine that has not yet implemented _Numeric Separator Literal_: 
 
 ```sh
 test262-harness --test262Dir=$TEST262 --hostType=ch --hostPath=`which ch` \
@@ -72,7 +72,7 @@ Ran 2 tests
 2 failed
 ```
 
-Now, using the same engine, but with [`preprocessors/babel`](#babel):
+Now, using the same engine, but **with [`preprocessors/babel`](#babel)**:
 
 ```sh
 test262-harness --test262Dir=$TEST262 --hostType=ch --hostPath=`which ch` \
