@@ -35,10 +35,56 @@ jsvu --engines=all;
 ## Running Test262-Harness With A Preprocessor
 
 
-Here's an example using [`preprocessors/babel`](#babel)
+Here's an example that runs a _Numeric Separator Literal_ test, using [`preprocessors/babel`](#babel) and `node` as the host:
+
 ```sh
-test262-harness --test262Dir=$TEST262 --hostType=node --hostPath=`which node` --preprocessor="preprocessors/babel" $TEST262/test/language/statements/class/elements/*.js
+test262-harness --test262Dir=$TEST262 --hostType=node --hostPath=`which node` --preprocessor="preprocessors/babel" $TEST262/test/language/literals/numeric/numeric-separators/numeric-separator-literal-bil-bd-nsl-bd.js
 ```
+
+The result should be: 
+
+```
+Ran 2 tests
+2 passed
+0 failed
+```
+
+Now let's see that same test, but without a preprocessor and using an engine that has not yet implemented _Numeric Separator Literal_: 
+
+```sh
+test262-harness --test262Dir=$TEST262 --hostType=ch --hostPath=`which ch` $TEST262/test/language/literals/numeric/numeric-separators/numeric-separator-literal-bil-bd-nsl-bd.js
+```
+
+The result should be: 
+
+```
+FAIL ../test262/test/language/literals/numeric/numeric-separators/numeric-separator-literal-bil-bd-nsl-bd.js (default)
+  Expected no error, got SyntaxError: Unexpected identifier after numeric literal
+
+FAIL ../test262/test/language/literals/numeric/numeric-separators/numeric-separator-literal-bil-bd-nsl-bd.js (strict mode)
+  Expected no error, got SyntaxError: Unexpected identifier after numeric literal
+
+Ran 2 tests
+0 passed
+2 failed
+```
+
+Now, using the same engine, but with [`preprocessors/babel`](#babel):
+
+```sh
+test262-harness --test262Dir=$TEST262 --hostType=ch --hostPath=`which ch` --preprocessor="preprocessors/babel" $TEST262/test/language/literals/numeric/numeric-separators/numeric-separator-literal-bil-bd-nsl-bd.js
+```
+
+The result should be: 
+
+```
+Ran 2 tests
+2 passed
+0 failed
+```
+
+
+
 
 ## Preprocessors
 
