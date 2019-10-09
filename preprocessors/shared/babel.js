@@ -21,7 +21,11 @@ module.exports = function(config) {
 
     if (!error) {
       try {
-        test.contents = babel.transform(test.contents, config).code;
+        const configuration = Object.assign({}, config, {
+          configFile: false,
+          sourceType: (test.attrs.flags && test.attrs.flags.module) ? "module" : "script",
+        });
+        test.contents = babel.transform(test.contents, configuration).code;
       } catch (caught) {
         error = caught;
       }
