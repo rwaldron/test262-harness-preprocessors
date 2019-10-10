@@ -25,7 +25,7 @@ module.exports = function(config) {
           configFile: false,
           sourceType: (test.attrs.flags && test.attrs.flags.module) ? "module" : "script",
         });
-        test.contents = babel.transform(test.contents, configuration).code;
+        test.contents = babel.transformSync(test.contents, configuration).code;
       } catch (caught) {
         error = caught;
       }
